@@ -150,14 +150,12 @@ export default function Page() {
 
   return (
     <main className="min-h-screen bg-white px-6 py-10">
-      <h1 className="text-center text-2xl md:text-3xl font-bold mb-8">
+      <h1 className="text-center font-[700] text-[50px]  mb-8 text-[#000000]">
         Select a vehicle group
       </h1>
 
-      {/* Brand logos section */}
 
 
-      {/* Category buttons */}
       <div className="flex flex-wrap justify-center gap-3 mb-10">
         {categories.map((cat) => (
           <button
@@ -291,13 +289,13 @@ export default function Page() {
         </div>
       )}
       <section className="bg-gray-50 rounded-2xl shadow-sm max-w-4xl mx-auto mb-10 p-4 flex flex-wrap justify-center items-center gap-10 mt-14">
-        <section className="bg-gray-50 rounded-2xl shadow-sm max-w-4xl mx-auto mb-10 p-6 flex flex-wrap justify-center items-center gap-10 mt-14">
-          <img src="/logos/toyota.png" alt="Toyota" className="h-10 object-contain" />
-          <img src="/logos/ford.png" alt="Ford" className="h-8 object-contain" />
-          <img src="/logos/mercedes.png" alt="Mercedes" className="h-9 object-contain" />
-          <img src="/logos/jeep.png" alt="Jeep" className="h-8 object-contain" />
-          <img src="/logos/bmw.png" alt="BMW" className="h-9 object-contain" />
-          <img src="/logos/audi.png" alt="Audi" className="h-6 object-contain" />
+        <section className="bg-gray-50 rounded-2xl max-w-4xl mx-auto mb-10 p-6 flex flex-wrap justify-center items-center gap-10 mt-14">
+          <img src="/toyota.png" alt="Toyota" className="h-10 object-contain" />
+          <img src="/ford.png" alt="Ford" className="h-8 object-contain" />
+          <img src="/mercedes.png" alt="Mercedes" className="h-9 object-contain" />
+          <img src="/jeep.png" alt="Jeep" className="h-8 object-contain" />
+          <img src="/bmw.png" alt="BMW" className="h-9 object-contain" />
+          <img src="/audi.png" alt="Audi" className="h-6 object-contain" />
         </section>
 
       </section>
