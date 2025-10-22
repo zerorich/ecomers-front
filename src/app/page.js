@@ -1,8 +1,8 @@
-import Vehicle from "./components/Vehicle"
+import BookSection from "./components/BookSection";
 export default function Page() {
   return (
     <div>
-      <Vehicle />
+      <BookSection/>
     </div>
   );
 }
