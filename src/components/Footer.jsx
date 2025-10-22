@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className="bg-[#1B1B1B] text-white py-12">
             <div className="max-w-7xl mx-auto px-6 mb-8">
-                <div className="flex flex-wrap justify-between items-center gap-6">
+                <div className="flex flex-wrap justify-between items-center gap-7">
                     <div className="flex items-center gap-3">
                         <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
                             <svg className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 20 20">
