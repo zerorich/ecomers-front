@@ -1,7 +1,37 @@
 'use client';
 
+import React from 'react';
 import { CalendarDays, MapPin, Mail, Phone, Clock } from 'lucide-react';
 
+// Navbar component
+const Navbar = () => {
+  return (
+    <div className="flex justify-between my-5 mx-10">
+      <div className="flex items-center gap-2">
+        <img src="/img1.svg" alt="logo" className="w-[50px] h-[50px]" />
+        <p className="font-[600]">Car Rental</p>
+      </div>
+
+      <ul className="flex items-center gap-3.5">
+        <li className="font-[600]"><a href="">Home</a></li>
+        <li className="font-[600]"><a href="">Vehicles</a></li>
+        <li className="font-[600]"><a href="">Details</a></li>
+        <li className="font-[600]"><a href="">About Us</a></li>
+        <li className="font-[600]"><a href="">Contact Us</a></li>
+      </ul>
+
+      <div className="flex items-center gap-3">
+        <img src="/img2.svg" alt="help icon" className="w-[50px] h-[50px]" />
+        <div className="flex flex-col leading-tight">
+          <span className="text-sm font-[600]">Need help?</span>
+          <span className="font-semibold text-black text-base">+996 247-1680</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// BookSection component
 export default function BookSection() {
   const contactInfo = [
     {
@@ -49,10 +79,11 @@ export default function BookSection() {
 
   return (
     <>
-      {/* ==== BOOK FORM SECTION ==== */}
+      <Navbar />
+
       <section className="bg-white flex flex-col justify-center items-center py-16 px-5">
         <div className="flex flex-col md:flex-row gap-6 max-w-5xl w-full bg-white rounded-2xl shadow-lg overflow-hidden mb-12">
-          {/* LEFT FORM */}
+          {/* Form section */}
           <div className="bg-[#4A23CC] text-white p-6 rounded-2xl md:rounded-l-2xl md:rounded-r-none w-full md:w-1/2">
             <h2 className="text-xl font-semibold mb-5 text-center">Book your car</h2>
 
@@ -103,17 +134,17 @@ export default function BookSection() {
             </form>
           </div>
 
-          {/* RIGHT IMAGE */}
+          {/* Image section */}
           <div className="w-full md:w-1/2 h-[350px]">
             <img
-              src="/car-blur.jpg"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNL9RKbMGs6IhGlFKEzr4psWqKkqgbA11CgA&s"
               alt="Car"
               className="w-full h-full object-cover rounded-2xl md:rounded-l-none"
             />
           </div>
         </div>
 
-        {/* ==== CONTACT INFO SECTION ==== */}
+        {/* Contact Info */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 max-w-6xl w-full border-t border-gray-200 pt-8">
           {contactInfo.map((item, index) => (
             <div key={index} className="flex items-center gap-4">
@@ -129,7 +160,7 @@ export default function BookSection() {
         </div>
       </section>
 
-      {/* ==== BLOG SECTION ==== */}
+      {/* Blog Posts */}
       <section className="bg-white py-16 px-5">
         <div className="max-w-6xl mx-auto text-center mb-10">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
