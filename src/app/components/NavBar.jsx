@@ -9,11 +9,11 @@ const Navbar = () => {
             </div>
 
             <ul className='flex items-center gap-3.5'>
-                <li className='font-[600]'><a href="#home">Home</a></li>
-                <li className='font-[600]'><a href="#vehicles">Vehicles</a></li>
-                <li className='font-[600]'><a href="#details">Details</a></li>
-                <li className='font-[600]'><a href="#about">About Us</a></li>
-                <li className='font-[600]'><a href="#contact">Contact Us</a></li>
+                <li className='font-[600]'><a href="/">Home</a></li>
+                <li className='font-[600]'><a href="/vehicles">Vehicles</a></li>
+                <li className='font-[600]'><a href="">Details</a></li>
+                <li className='font-[600]'><a href="">About Us</a></li>
+                <li className='font-[600]'><a href="">Contact Us</a></li>
             </ul>
             <div className="flex items-center gap-3">
                 <img src="/img2.svg" alt="help icon" className="w-[50px] h-[50px]" />
