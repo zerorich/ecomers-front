@@ -12,7 +12,7 @@ const Navbar = () => {
                 <li className='font-[600]'><a href="/">Home</a></li>
                 <li className='font-[600]'><a href="/vehicles">Vehicles</a></li>
                 <li className='font-[600]'><a href="">Details</a></li>
-                <li className='font-[600]'><a href="">About Us</a></li>
+                <li className='font-[600]'><a href="/about">About Us</a></li>
                 <li className='font-[600]'><a href="/contact">Contact Us</a></li>
             </ul>
             <div className="flex items-center gap-3">
