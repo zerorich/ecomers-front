@@ -1,4 +1,6 @@
 import React from 'react'
+import Link from 'next/link'
+import { ROUTE } from '@/routes'
 
 const Main = () => {
   return (
@@ -11,9 +13,9 @@ const Main = () => {
           Aliquam adipiscing velit semper morbi. Purus non eu cursus porttitor
           tristique et gravida. Quis nunc interdum gravida ullamcorper.
         </p>
-        <button className="bg-yellow-400 hover:bg-yellow-500 transition text-white font-semibold px-6 py-3 rounded-lg">
+        <Link href={ROUTE.VEHICLES} className="inline-block bg-yellow-400 hover:bg-yellow-500 transition text-white font-semibold px-6 py-3 rounded-lg">
           View all cars
-        </button>
+        </Link>
       </div>
 
       <div className="bg-white rounded-2xl shadow-xl p-8 w-[380px]">

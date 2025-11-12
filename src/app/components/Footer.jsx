@@ -83,7 +83,9 @@ const Footer = () => {
 
                     <div>
                         <h3 className="font-bold text-lg mb-4">Vehicles</h3>
-                        <ul className="space-y-2">
+                        <ul className="
+                        
+                        space-y-2">
                             {['Sedan', 'Cabriolet', 'Pickup', 'Minivan', 'SUV'].map((v, i) => (
                                 <li key={i}><a href="#" className="hover:text-orange-500 transition">{v}</a></li>
                             ))}

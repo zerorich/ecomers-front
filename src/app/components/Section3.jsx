@@ -1,13 +1,15 @@
 import React from "react";
+import Link from 'next/link';
+import { ROUTE } from '@/routes';
 
 const Section3 = () => {
   return (
     <div className=" mx-10 py-10">
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-2xl font-bold">Choose the car that suits you</h2>
-        <a href="#" className="text-sm font-medium text-gray-700 hover:text-purple-600 flex items-center gap-1">
+        <Link href={ROUTE.VEHICLES} className="text-sm font-medium text-gray-700 hover:text-purple-600 flex items-center gap-1">
           View All →
-        </a>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
