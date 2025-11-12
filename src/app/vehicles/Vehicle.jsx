@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import {
   Settings,
   Wind,
@@ -29,7 +30,7 @@ const vehicles = [
     doors: 4,
     seats: 5,
     distance: 500,
-    image: 'https://images.unsplash.com/photo-1616781137294-3b5cbb3a1db7?auto=format&fit=crop&w=800&q=80',
+    image: 'https://avatars.mds.yandex.net/get-verba/997355/2a00000187e6a56fc2d2c95326c2b0135d3c/456x342',
   },
   {
     id: 2,
@@ -55,7 +56,7 @@ const vehicles = [
     doors: 4,
     seats: 5,
     distance: 600,
-    image: 'https://images.unsplash.com/photo-1571607388263-4a46a575d846?auto=format&fit=crop&w=800&q=80',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0Fu6PUKhHgxr0kelDByS5_kC3cvBCzriNUg&s',
   },
   {
     id: 4,
@@ -68,7 +69,7 @@ const vehicles = [
     doors: 4,
     seats: 5,
     distance: 550,
-    image: 'https://images.unsplash.com/photo-1614436163996-22ca0f224b25?auto=format&fit=crop&w=800&q=80',
+    image: 'https://greats.gallery/upload/resize_cache/iblock/044/670_540_0/j1m8ssq32brk9am0f3arxfmyaqyyafjr.jpg',
   },
   {
     id: 5,
@@ -81,7 +82,7 @@ const vehicles = [
     doors: 4,
     seats: 5,
     distance: 700,
-    image: 'https://images.unsplash.com/photo-1616772743214-1f28a8acaf75?auto=format&fit=crop&w=800&q=80',
+    image: 'https://carsweek.ru/upload/iblock/1f2/1f2a7c94960099db2492f09a5bbb7220.jpg',
   },
   {
     id: 6,
@@ -94,7 +95,7 @@ const vehicles = [
     doors: 4,
     seats: 7,
     distance: 500,
-    image: 'https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=800&q=80',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ47WToeyyBmW3TQhorOJ54ZaCzI7Wb1cX-rw&s',
   },
   {
     id: 7,
@@ -107,7 +108,7 @@ const vehicles = [
     doors: 4,
     seats: 5,
     distance: 480,
-    image: 'https://images.unsplash.com/photo-1617142023367-ef7b964b4b36?auto=format&fit=crop&w=800&q=80',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVvAPSEy_HqJzsaBRIqSa78pZXr8s-_o_iHw&s',
   },
   {
     id: 8,
@@ -120,7 +121,7 @@ const vehicles = [
     doors: 4,
     seats: 5,
     distance: 400,
-    image: 'https://images.unsplash.com/photo-1619024241608-0f909c3d5efc?auto=format&fit=crop&w=800&q=80',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVFZPB4Z8eXmULvtwswN3IdGwQEl_dw68kug&s',
   },
   {
     id: 9,
@@ -133,13 +134,12 @@ const vehicles = [
     doors: 2,
     seats: 2,
     distance: 450,
-    image: 'https://images.unsplash.com/photo-1602407294553-6cf2409b0e2f?auto=format&fit=crop&w=800&q=80',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMku41vVWPGmYlRGOzBZ3xAImi27oLj6w04w&s',
   },
 ];
 
 export default function Page() {
   const [active, setActive] = useState('all');
-  const [selected, setSelected] = useState(null);
 
   const filteredVehicles =
     active === 'all'
@@ -207,12 +207,12 @@ export default function Page() {
               )}
             </div>
 
-            <button
-              onClick={() => setSelected(v)}
-              className="mt-auto bg-violet-600 hover:bg-violet-700 text-white text-sm py-2 rounded-md transition"
+            <Link
+              href={`/vehicles/${v.id}`}
+              className="mt-auto bg-violet-600 hover:bg-violet-700 text-white text-sm py-2 rounded-md text-center transition"
             >
               View Details
-            </button>
+            </Link>
           </div>
         ))}
 
@@ -223,78 +223,13 @@ export default function Page() {
         )}
       </div>
 
-      {/* Modal */}
-      {selected && (
-        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl p-6 w-full max-w-4xl relative">
-            <button
-              onClick={() => setSelected(null)}
-              className="absolute top-3 right-3 text-gray-500 hover:text-black text-lg"
-            >
-              ✕
-            </button>
-
-            <h2 className="text-2xl font-bold mb-1">{selected.name}</h2>
-            <p className="text-violet-600 font-semibold mb-4">
-              ${selected.price} <span className="text-gray-500">/ day</span>
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <div className="rounded-xl overflow-hidden h-52 mb-4">
-                  <img
-                    src={selected.image}
-                    alt={selected.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-lg mb-3">
-                  Technical Specification
-                </h3>
-                <div className="grid grid-cols-2 gap-3 text-sm">
-                  <Spec label="Gear Box" value={selected.gear} />
-                  <Spec label="Fuel" value={selected.fuel} />
-                  <Spec label="Doors" value={selected.doors} />
-                  <Spec
-                    label="Air Conditioner"
-                    value={selected.ac ? 'Yes' : 'No'}
-                  />
-                  <Spec label="Seats" value={selected.seats} />
-                  <Spec label="Distance" value={`${selected.distance} km`} />
-                </div>
-
-                <button className="mt-5 w-full bg-violet-600 hover:bg-violet-700 text-white py-2 rounded-md">
-                  Rent a car
-                </button>
-
-                <h3 className="font-semibold text-lg mt-6 mb-2">
-                  Car Equipment
-                </h3>
-                <div className="grid grid-cols-2 gap-2 text-sm text-gray-700">
-                  {['ABS', 'Air Bags', 'Cruise Control', 'Air Conditioner'].map(
-                    (eq, i) => (
-                      <div key={i} className="flex items-center gap-2">
-                        <CheckCircle2 size={14} className="text-violet-600" />{' '}
-                        {eq}
-                      </div>
-                    )
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
       <section className="bg-gray-50 rounded-2xl shadow-sm max-w-4xl mx-auto mb-10 p-4 flex flex-wrap justify-center items-center gap-10 mt-14">
         <section className="bg-gray-50 rounded-2xl max-w-4xl mx-auto mb-10 p-6 flex flex-wrap justify-center items-center gap-10 mt-14">
           <img src="/toyota.png" alt="Toyota" className="h-10 object-contain" />
           <img src="/ford.png" alt="Ford" className="h-8 object-contain" />
           <img src="/mercedes.png" alt="Mercedes" className="h-9 object-contain" />
           <img src="/jeep.png" alt="Jeep" className="h-8 object-contain" />
-          <img src="/bmw.png" alt="BMW" className="h-9 object-contain" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/BMW_G20_%282022%29_IMG_7316_%282%29.jpg" alt="BMW" className="h-9 object-contain" />
           <img src="/audi.png" alt="Audi" className="h-6 object-contain" />
         </section>
 
