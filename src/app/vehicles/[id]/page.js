@@ -148,8 +148,8 @@ export default function VehicleDetailsPage({ params }) {
     }, [gallerySources]);
 
     return (
-    <main className="min-h-screen bg-white px-6 py-10">
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10">
+        <main className="min-h-screen bg-white px-6 py-10">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10">
                 <div>
                     <h1 className="text-2xl font-bold mb-1">{vehicle.name}</h1>
                     <p className="text-violet-600 font-semibold mb-6">
@@ -202,47 +202,47 @@ export default function VehicleDetailsPage({ params }) {
                         ))}
                     </div>
                 </div>
-      </div>
+            </div>
 
-      <section className="max-w-6xl mx-auto mt-14">
-        <div className="flex items-center justify-between mb-5">
-          <h3 className="text-xl font-semibold">Other cars</h3>
-          <Link href="/vehicles" className="text-sm text-gray-600 hover:text-black">View All →</Link>
-        </div>
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {vehicles
-            .filter((v) => v.id !== vehicle.id && v.type === vehicle.type)
-            .slice(0, 6)
-            .map((v) => (
-              <div key={v.id} className="bg-gray-50 rounded-2xl shadow-sm p-5 flex flex-col">
-                <div className="rounded-xl overflow-hidden h-32 mb-4 relative">
-                  <img src={v.image} alt={v.name} className="w-full h-full object-cover" />
+            <section className="max-w-6xl mx-auto mt-14">
+                <div className="flex items-center justify-between mb-5">
+                    <h3 className="text-xl font-semibold">Other cars</h3>
+                    <Link href="/vehicles" className="text-sm text-gray-600 hover:text-black">View All →</Link>
                 </div>
-                <div className="flex items-start justify-between mb-1">
-                  <div className="font-semibold">{v.name.split(' ')[0]}</div>
-                  <div className="text-violet-600 text-sm font-semibold">${v.price}</div>
+                <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                    {vehicles
+                        .filter((v) => v.id !== vehicle.id && v.type === vehicle.type)
+                        .slice(0, 6)
+                        .map((v) => (
+                            <div key={v.id} className="bg-gray-50 rounded-2xl shadow-sm p-5 flex flex-col">
+                                <div className="rounded-xl overflow-hidden h-32 mb-4 relative">
+                                    <img src={v.image} alt={v.name} className="w-full h-full object-cover" />
+                                </div>
+                                <div className="flex items-start justify-between mb-1">
+                                    <div className="font-semibold">{v.name.split(' ')[0]}</div>
+                                    <div className="text-violet-600 text-sm font-semibold">${v.price}</div>
+                                </div>
+                                <p className="text-gray-500 text-sm mb-3">{v.type}</p>
+                                <div className="flex items-center gap-3 text-gray-600 text-sm mb-4 flex-wrap">
+                                    <div className="flex items-center gap-1">
+                                        <Settings size={14} /> {v.gear}
+                                    </div>
+                                    <div className="flex items-center gap-1">
+                                        <Fuel size={14} /> {v.fuel}
+                                    </div>
+                                    {v.ac && (
+                                        <div className="flex items-center gap-1">
+                                            <Wind size={14} /> Air Conditioner
+                                        </div>
+                                    )}
+                                </div>
+                                <Link href={`/vehicles/${v.id}`} className="mt-auto bg-violet-600 hover:bg-violet-700 text-white text-sm py-2 rounded-md text-center transition">
+                                    View Details
+                                </Link>
+                            </div>
+                        ))}
                 </div>
-                <p className="text-gray-500 text-sm mb-3">{v.type}</p>
-                <div className="flex items-center gap-3 text-gray-600 text-sm mb-4 flex-wrap">
-                  <div className="flex items-center gap-1">
-                    <Settings size={14} /> {v.gear}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Fuel size={14} /> {v.fuel}
-                  </div>
-                  {v.ac && (
-                    <div className="flex items-center gap-1">
-                      <Wind size={14} /> Air Conditioner
-                    </div>
-                  )}
-                </div>
-                <Link href={`/vehicles/${v.id}`} className="mt-auto bg-violet-600 hover:bg-violet-700 text-white text-sm py-2 rounded-md text-center transition">
-                  View Details
-                </Link>
-              </div>
-            ))}
-        </div>
-      </section>
+            </section>
         </main>
     );
 }
@@ -255,5 +255,4 @@ function Spec({ label, value }) {
         </div>
     );
 }
-
 

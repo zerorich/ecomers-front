@@ -1,6 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
-import { ROUTE } from '@/routes'
 
 const Navbar = () => {
     return (
@@ -11,12 +9,11 @@ const Navbar = () => {
             </div>
 
             <ul className='flex items-center gap-3.5'>
-                <li className='font-[600]'><Link href={ROUTE.HOME}>Home</Link></li>
-                <li className='font-[600]'><Link href={ROUTE.VEHICLES}>Vehicles</Link></li>
-                {/* Остальные ссылки ведут на секции текущей страницы либо будущие страницы */}
-                <li className='font-[600]'><Link href={ROUTE.VEHICLES}>Details</Link></li>
-                <li className='font-[600]'><Link href={ROUTE.HOME}>About Us</Link></li>
-                <li className='font-[600]'><Link href={ROUTE.CONTACT}>Contact Us</Link></li>
+                <li className='font-[600]'><a href="/">Home</a></li>
+                <li className='font-[600]'><a href="/vehicles">Vehicles</a></li>
+                <li className='font-[600]'><a href="">Details</a></li>
+                <li className='font-[600]'><a href="/about">About Us</a></li>
+                <li className='font-[600]'><a href="/contact">Contact Us</a></li>
             </ul>
             <div className="flex items-center gap-3">
                 <img src="/img2.svg" alt="help icon" className="w-[50px] h-[50px]" />
