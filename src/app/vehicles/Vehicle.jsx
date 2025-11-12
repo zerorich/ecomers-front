@@ -162,8 +162,8 @@ export default function Page() {
             key={cat.id}
             onClick={() => setActive(cat.id)}
             className={`px-5 py-2 rounded-full border transition-all ${active === cat.id
-                ? 'bg-violet-600 text-white border-violet-600'
-                : 'border-gray-300 text-gray-700 hover:bg-violet-100'
+              ? 'bg-violet-600 text-white border-violet-600'
+              : 'border-gray-300 text-gray-700 hover:bg-violet-100'
               }`}
           >
             {cat.label}
@@ -224,14 +224,14 @@ export default function Page() {
       </div>
 
       <section className="bg-gray-50 rounded-2xl shadow-sm max-w-4xl mx-auto mb-10 p-4 flex flex-wrap justify-center items-center gap-10 mt-14">
-        <section className="bg-gray-50 rounded-2xl max-w-4xl mx-auto mb-10 p-6 flex flex-wrap justify-center items-center gap-10 mt-14">
-          <img src="/toyota.png" alt="Toyota" className="h-10 object-contain" />
-          <img src="/ford.png" alt="Ford" className="h-8 object-contain" />
-          <img src="/mercedes.png" alt="Mercedes" className="h-9 object-contain" />
-          <img src="/jeep.png" alt="Jeep" className="h-8 object-contain" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/BMW_G20_%282022%29_IMG_7316_%282%29.jpg" alt="BMW" className="h-9 object-contain" />
-          <img src="/audi.png" alt="Audi" className="h-6 object-contain" />
-        </section>
+        <div className='bg-[#FAFAFA] max-w-[1296px] px-[40px] flex justify-between items-center mx-auto mt-10 h-[174px] rounded-[20px]'>
+          <img src="/toyota.png" alt="" />
+          <img src="/ford.png" alt="" />
+          <img src="/mercedes.png" alt="" />
+          <img src="/jeep.png" alt="" />
+          <img src="/bmw.png" alt="" />
+          <img src="/audio.png" alt="" />
+        </div>
 
       </section>
     </main>
