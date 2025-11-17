@@ -6,7 +6,6 @@ import {
   Settings,
   Wind,
   Fuel,
-  CheckCircle2,
 } from 'lucide-react';
 
 const categories = [
@@ -18,7 +17,7 @@ const categories = [
   { id: 'minivan', label: 'Minivan' },
 ];
 
-const vehicles = [
+export const vehicles = [
   {
     id: 1,
     name: 'Mercedes-Benz E-Class',
@@ -30,7 +29,8 @@ const vehicles = [
     doors: 4,
     seats: 5,
     distance: 500,
-    image: 'https://avatars.mds.yandex.net/get-verba/997355/2a00000187e6a56fc2d2c95326c2b0135d3c/456x342',
+    image:
+      'https://avatars.mds.yandex.net/get-verba/997355/2a00000187e6a56fc2d2c95326c2b0135d3c/456x342',
   },
   {
     id: 2,
@@ -43,7 +43,8 @@ const vehicles = [
     doors: 2,
     seats: 2,
     distance: 400,
-    image: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80',
+    image:
+      'https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 3,
@@ -56,7 +57,8 @@ const vehicles = [
     doors: 4,
     seats: 5,
     distance: 600,
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0Fu6PUKhHgxr0kelDByS5_kC3cvBCzriNUg&s',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0Fu6PUKhHgxr0kelDByS5_kC3cvBCzriNUg&s',
   },
   {
     id: 4,
@@ -69,7 +71,8 @@ const vehicles = [
     doors: 4,
     seats: 5,
     distance: 550,
-    image: 'https://greats.gallery/upload/resize_cache/iblock/044/670_540_0/j1m8ssq32brk9am0f3arxfmyaqyyafjr.jpg',
+    image:
+      'https://greats.gallery/upload/resize_cache/iblock/044/670_540_0/j1m8ssq32brk9am0f3arxfmyaqyyafjr.jpg',
   },
   {
     id: 5,
@@ -82,7 +85,8 @@ const vehicles = [
     doors: 4,
     seats: 5,
     distance: 700,
-    image: 'https://carsweek.ru/upload/iblock/1f2/1f2a7c94960099db2492f09a5bbb7220.jpg',
+    image:
+      'https://carsweek.ru/upload/iblock/1f2/1f2a7c94960099db2492f09a5bbb7220.jpg',
   },
   {
     id: 6,
@@ -95,7 +99,8 @@ const vehicles = [
     doors: 4,
     seats: 7,
     distance: 500,
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ47WToeyyBmW3TQhorOJ54ZaCzI7Wb1cX-rw&s',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ47WToeyyBmW3TQhorOJ54ZaCzI7Wb1cX-rw&s',
   },
   {
     id: 7,
@@ -108,7 +113,8 @@ const vehicles = [
     doors: 4,
     seats: 5,
     distance: 480,
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVvAPSEy_HqJzsaBRIqSa78pZXr8s-_o_iHw&s',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVvAPSEy_HqJzsaBRIqSa78pZXr8s-_o_iHw&s',
   },
   {
     id: 8,
@@ -121,7 +127,8 @@ const vehicles = [
     doors: 4,
     seats: 5,
     distance: 400,
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVFZPB4Z8eXmULvtwswN3IdGwQEl_dw68kug&s',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVFZPB4Z8eXmULvtwswN3IdGwQEl_dw68kug&s',
   },
   {
     id: 9,
@@ -134,7 +141,8 @@ const vehicles = [
     doors: 2,
     seats: 2,
     distance: 450,
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMku41vVWPGmYlRGOzBZ3xAImi27oLj6w04w&s',
+    image:
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMku41vVWPGmYlRGOzBZ3xAImi27oLj6w04w&s',
   },
 ];
 
@@ -145,33 +153,31 @@ export default function Page() {
     active === 'all'
       ? vehicles
       : vehicles.filter(
-        (v) => v.type.toLowerCase() === active.toLowerCase()
-      );
+          (v) => v.type.toLowerCase() === active.toLowerCase()
+        );
 
   return (
     <main className="min-h-screen bg-white px-6 py-10">
-      <h1 className="text-center font-[700] text-[50px]  mb-8 text-[#000000]">
+      <h1 className="text-center font-[700] text-[50px] mb-8 text-[#000000]">
         Select a vehicle group
       </h1>
-
-
 
       <div className="flex flex-wrap justify-center gap-3 mb-10">
         {categories.map((cat) => (
           <button
             key={cat.id}
             onClick={() => setActive(cat.id)}
-            className={`px-5 py-2 rounded-full border transition-all ${active === cat.id
+            className={`px-5 py-2 rounded-full border transition-all ${
+              active === cat.id
                 ? 'bg-violet-600 text-white border-violet-600'
                 : 'border-gray-300 text-gray-700 hover:bg-violet-100'
-              }`}
+            }`}
           >
             {cat.label}
           </button>
         ))}
       </div>
 
-      {/* Vehicle cards */}
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
         {filteredVehicles.map((v) => (
           <div
@@ -223,26 +229,16 @@ export default function Page() {
         )}
       </div>
 
-      <section className="bg-gray-50 rounded-2xl shadow-sm max-w-4xl mx-auto mb-10 p-4 flex flex-wrap justify-center items-center gap-10 mt-14">
-        <section className="bg-gray-50 rounded-2xl max-w-4xl mx-auto mb-10 p-6 flex flex-wrap justify-center items-center gap-10 mt-14">
-          <img src="/toyota.png" alt="Toyota" className="h-10 object-contain" />
-          <img src="/ford.png" alt="Ford" className="h-8 object-contain" />
-          <img src="/mercedes.png" alt="Mercedes" className="h-9 object-contain" />
-          <img src="/jeep.png" alt="Jeep" className="h-8 object-contain" />
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/BMW_G20_%282022%29_IMG_7316_%282%29.jpg" alt="BMW" className="h-9 object-contain" />
-          <img src="/audi.png" alt="Audi" className="h-6 object-contain" />
-        </section>
-
+      <section className="bg-gray-50 max-w-[1296px] rounded-2xl shadow-sm mx-auto mb-10 p-4 flex flex-wrap justify-center items-center gap-10 mt-14">
+        <div className="bg-[#FAFAFA] px-[40px] flex justify-between w-full items-center mx-auto mt-10 h-[174px] rounded-[20px]">
+          <img src="/toyota.png" alt="" />
+          <img src="/ford.png" alt="" />
+          <img src="/mercedes.png" alt="" />
+          <img src="/jeep.png" alt="" />
+          <img src="/bmw.png" alt="" />
+          <img src="/audio.png" alt="" />
+        </div>
       </section>
     </main>
-  );
-}
-
-function Spec({ label, value }) {
-  return (
-    <div className="bg-gray-100 rounded-lg p-3 flex flex-col">
-      <span className="font-medium text-gray-700">{label}</span>
-      <p className="text-gray-600">{value}</p>
-    </div>
   );
 }
